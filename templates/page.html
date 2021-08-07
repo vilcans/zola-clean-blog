@@ -31,6 +31,16 @@
             {% endfor %}
           </p>
         </div>
+        <div>
+          <p>
+            {% if page.earlier %}
+            Previous: <a href="{{page.earlier.path}}">{{page.earlier.title}}</a><br/>
+            {% endif %}
+            {% if page.later %}
+            Next: <a href="{{page.later.path}}">{{page.later.title}}</a><br/>
+            {% endif %}
+          </p>
+        </div>
         {% endif %}
         {% block comments %}{% endblock comments %}
       </div>
