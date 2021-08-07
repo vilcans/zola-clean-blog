@@ -80,7 +80,10 @@
           {% for page in paginator.pages %}
           <div class="post-preview">
             {{ post_macros::page_title(page=page) }}
+            {% if page.summary %}
             <p class="post-summary">{{ page.summary | safe }}</p>
+            <p><a href="{{page.path}}">Read more...</a></p>
+            {% endif %}
           </div>
           {% endfor %}
         </div>
