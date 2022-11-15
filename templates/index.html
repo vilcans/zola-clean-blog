@@ -113,7 +113,7 @@
           <ul class="list-inline text-center">
             {% for item in config.extra.clean_blog_social %}
             <li class="list-inline-item">
-              <a href="{{ item.url | replace(from="$BASE_URL", to=config.base_url) }}">
+              <a {% if item.rel %}rel="{{ item.rel }}"{% endif %} href="{{ item.url | replace(from="$BASE_URL", to=config.base_url) }}">
                 <span class="fa-stack fa-lg">
                   <i class="fas fa-circle fa-stack-2x"></i>
                   <i class="{{ item.icon }} fa-stack-1x fa-inverse"></i>
