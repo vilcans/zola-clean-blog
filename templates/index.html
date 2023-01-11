@@ -26,6 +26,9 @@
   <!-- Custom styles for this template -->
   <link rel="stylesheet" href="{{ get_url(path="clean-blog.css", trailing_slash=false) }}">
 
+  {% if config.generate_feed %}
+  <link rel="alternate" type="application/rss+xml" title="RSS feed for {{ config.title }}" href="{{ get_url(path=config.feed_filename) }}" />
+  {% endif %}
 </head>
 
 <body>
